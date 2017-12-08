@@ -23,6 +23,6 @@ RSpec.describe "Categories", type: :request do
         name: category.name,
         category_slug: category.category_slug
       })
-     end
-   end
+    end
+  end
 end

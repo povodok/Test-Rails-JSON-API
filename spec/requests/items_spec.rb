@@ -1,14 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Items", type: :request do
-  let!(:category) { create(:category) }
-  let(:valid_attributes) {
-    { name: "Example Item", price: 99.99, description: "Example description", item_slug: 'example-item', category_id: category.id }
-  }
+  let!(:item) { create(:item) }
 
   describe "GET /items" do
     it "returns list of items" do
-      item = Item.create! valid_attributes
       get items_path
       expect(response).to have_http_status(200)
       expect(response.body).to include_json([{
@@ -23,7 +19,6 @@ RSpec.describe "Items", type: :request do
 
   describe "GET /item/:item_slug" do
     it "returns item" do
-      item = Item.create! valid_attributes
       get item_path(item)
       expect(response).to have_http_status(200)
       expect(response.body).to include_json({

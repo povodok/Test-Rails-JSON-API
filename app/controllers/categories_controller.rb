@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @items = @category.items.paginate(page: params[:page], per_page: 10)
     render json: @category
   end
 

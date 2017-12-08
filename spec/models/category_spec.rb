@@ -8,4 +8,6 @@ RSpec.describe Category, type: :model do
     it { should validate_presence_of(:category_slug) }
     it { should validate_uniqueness_of(:category_slug) }
   end
+
+  it { should have_many(:items) }
 end

@@ -18,7 +18,7 @@ gem 'puma', '~> 3.7'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,6 +42,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 2.8'
+  gem 'rspec-json_expectations'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

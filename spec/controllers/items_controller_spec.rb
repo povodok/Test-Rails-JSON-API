@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe ItemsController, type: :controller do
 
   let(:valid_attributes) {
-    { name: "Example Item", price: "99.99", description: "Example description", item_slug: 'example-item', category_id: category.id }
+    { name: "Example Item", price: 99.99, description: "Example description", item_slug: 'example-item', category_id: category.id }
   }
 
-  let(:category) { create(:category) }
+  let!(:category) { create(:category) }
 
   describe "GET #index" do
     it "returns a success response" do

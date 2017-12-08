@@ -11,4 +11,6 @@ RSpec.describe Item, type: :model do
     it { should validate_presence_of(:item_slug) }
     it { should validate_uniqueness_of(:item_slug) }
   end
+
+  it { should belong_to(:category) }
 end

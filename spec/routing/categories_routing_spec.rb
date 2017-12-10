@@ -8,7 +8,7 @@ RSpec.describe CategoriesController, type: :routing do
     end
 
     it "routes to #show" do
-      expect(get: "/categories/notebook").to route_to("categories#show", category_slug: "notebook")
+      expect(get: "/categories/notebook").to route_to("categories#show", slug: "notebook")
     end
   end
 end

@@ -12,7 +12,7 @@ RSpec.describe CategoriesController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      get :show, params: { category_slug: category.to_param }
+      get :show, params: { slug: category.to_param }
       expect(response).to be_success
     end
   end

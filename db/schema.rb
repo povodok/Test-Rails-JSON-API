@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20171208103512) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
-    t.string "category_slug", null: false
+    t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_slug"], name: "index_categories_on_category_slug", unique: true
     t.index ["name"], name: "index_categories_on_name"
+    t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
   create_table "items", force: :cascade do |t|
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20171208103512) do
     t.decimal "price", null: false
     t.text "description", null: false
     t.integer "category_id", null: false
-    t.string "item_slug", null: false
+    t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"

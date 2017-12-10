@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.decimal :price,       null: false
       t.text :description,    null: false
       t.integer :category_id, null: false
-      t.string :item_slug,    null: false
+      t.string :slug,    null: false
 
       t.timestamps
     end

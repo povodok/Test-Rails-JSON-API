@@ -13,11 +13,12 @@ RSpec.describe "Items", type: :request do
         description: item.description,
         price: item.price.to_s,
         category_id: item.category_id,
-        item_slug: item.item_slug}])
+        slug: item.slug
+      }])
     end
   end
 
-  describe "GET /item/:item_slug" do
+  describe "GET /item/:slug" do
     it "returns item" do
       get item_path(item)
       expect(response).to have_http_status(200)
@@ -27,7 +28,7 @@ RSpec.describe "Items", type: :request do
         description: item.description,
         price: item.price.to_s,
         category_id: item.category_id,
-        item_slug: item.item_slug
+        slug: item.slug
       })
      end
    end

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
     name "Notebook"
-    category_slug "notebook"
+    slug "notebook"
   end
 end

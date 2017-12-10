@@ -9,7 +9,7 @@ RSpec.describe ItemsController, type: :routing do
 
 
     it "routes to #show" do
-      expect(get: "/items/apple-macbook-pro").to route_to("items#show", item_slug: "apple-macbook-pro")
+      expect(get: "/items/apple-macbook-pro").to route_to("items#show", slug: "apple-macbook-pro")
     end
   end
 end

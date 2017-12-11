@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-categories = Category.create([{ name: 'Phones', slug: 'phones' }, { name: 'Notebook', slug: 'notebook' }])
+Category.create([{ name: 'Phones', slug: 'phones' }, { name: 'Notebook', slug: 'notebook' }])
+
 (1..30).each  do |i|
   Item.create(name: "Iphone#{i}", price: 10, description: 'cool phone', slug: "iphone#{i}", category_id: 1)
 end

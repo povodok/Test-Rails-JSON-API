@@ -24,16 +24,16 @@ RSpec.describe ItemsController, type: :controller do
       expect(response.body).to include_json([{
         category_id: item.category_id
       }])
-      items = JSON.parse(response.body)
+      items = parsed_response
       expect(items.size).to eq(1)
     end
 
     it 'returns items by page' do
       get :index, params: { page: 1 }
-      items = JSON.parse(response.body)
+      items = parsed_response
       expect(items.size).to eq(10)
       get :index, params: { page: 2 }
-      items = JSON.parse(response.body)
+      items = parsed_response
       expect(items.size).to eq(7)
     end
   end

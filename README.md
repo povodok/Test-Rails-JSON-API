@@ -1,24 +1,41 @@
-# README
+# Rails JSON API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Download
 
-Things you may want to cover:
+```bash
+git clone git@github.com:povodok/test_rails_json_api.git
+cd test_rails_json_api
+```
 
-* Ruby version
+Run
 
-* System dependencies
+```bash
+bundle install
+```
 
-* Configuration
+## Setup database
 
-* Database creation
+```bash
+rails db:setup
+```
 
-* Database initialization
+## Curl examples
 
-* How to run the test suite
+Start rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails s
+```
 
-* Deployment instructions
+Open new terminal tab and execute:
 
-* ...
+```bash
+$ curl -i --request GET http://localhost:3000/categories --header "Accept: application/json"
+```
+
+This returns all categories.
+
+Now request one category by it's slug:
+
+```bash
+$ curl -i --request GET http://localhost:3000/categories/phones --header "Accept: application/json"

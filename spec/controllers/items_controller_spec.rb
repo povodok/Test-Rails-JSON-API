@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
   let!(:item) { create(:item) }
-  let!(:category) { create(:category) }
-  let!(:item_2) { create(:item, category_id: category.id) }
+  let!(:item_2) { create(:item) }
   let!(:items_list) { create_list(:item, 15) }
 
   describe "GET #index" do

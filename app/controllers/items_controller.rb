@@ -3,9 +3,9 @@ class ItemsController < ApplicationController
 
 def index
   if params[:category_id]
-    @items = Item.where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 30)
+    @items = Item.where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 10)
   else
-    @items = Item.paginate(page: params[:page], per_page: 30)
+    @items = Item.paginate(page: params[:page], per_page: 10)
   end
 
   render json: @items

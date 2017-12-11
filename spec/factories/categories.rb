@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    name "Notebook"
-    slug "notebook"
+    name "Notebooks"
+    sequence(:slug) { |n| "notebooks#{n}" }
   end
 end

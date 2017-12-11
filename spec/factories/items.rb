@@ -3,7 +3,7 @@ FactoryBot.define do
     name "Apple MacBook"
     price 999.99
     description "It has the brightest, most colorful Mac notebook display ever. "
-    slug "apple-macbook"
+    sequence(:slug) { |n| "macbook-#{n}" }
     category
   end
 end

@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
   let!(:item) { create(:item) }
-  let!(:category_2) { create(:category, slug: '2') }
-  let!(:item_2) { create(:item,  slug: '2', category_id: category_2.id) }
+  let!(:category) { create(:category) }
+  let!(:item_2) { create(:item, category_id: category.id) }
+  let!(:items_list) { create_list(:item, 15) }
 
   describe "GET #index" do
     it "returns a success response" do
@@ -24,15 +25,20 @@ RSpec.describe ItemsController, type: :controller do
       expect(response.body).to include_json([{
         category_id: item.category_id
       }])
+      items = JSON.parse(response.body)
+      expect(items.size).to eq(1)
     end
 
-    it "returns items by category_id" do
-      get :index, params: { category_id: item.category_id }
-      expect(response.body).not_to include_json([{
-        category_id: item_2.category_id
-      }])
+    it 'returns items by page' do
+      get :index, params: { page: 1 }
+      items = JSON.parse(response.body)
+      expect(items.size).to eq(10)
+      get :index, params: { page: 2 }
+      items = JSON.parse(response.body)
+      expect(items.size).to eq(7)
     end
   end
+
 
   describe "GET #show" do
     it "returns a success response" do
